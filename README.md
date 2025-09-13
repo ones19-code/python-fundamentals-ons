@@ -1,6 +1,18 @@
-# Python Fundamentals - Ons
+# Python Fundamentals Project
 
-This repository contains my Python Fundamentals project including:
+my mini  project demonstrates basic Python concepts:
+- Variables (strings, integers, lists, dictionaries)
+- Conditionals (if/elif/else)
+- Loops (for, while)
+- Data structures (lists, tuples, dictionaries)
+- Built-in functions: enumerate, range, id
+- String to int casting
+- Command-line arguments using argparse
 
-- data_analyzer.py: main script demonstrating variables, loops, conditionals, and functions
-- utils.py: reusable functions like greet() and add_numbers()
+
+
+   files
+
+  
+- `data_analyzer.py`: Main script demonstrating Python fundamentals
+- `utils.py`: Reusablefunctions
