@@ -1,15 +1,3 @@
-# ============================================================
-# 🧠 Pandas Data Manipulation and Validation Assignment
-# ============================================================
-# Author: [Your Name]
-# Date: [Insert Date]
-#
-# This script demonstrates various Pandas operations such as:
-# - Data creation and inspection
-# - Data slicing and filtering
-# - Data cleaning using duplication handling, conversions, and pipelines
-# - Application of functions and partial functions with .pipe()
-# ============================================================
 
 import pandas as pd
 import numpy as np
