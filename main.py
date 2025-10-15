@@ -1,9 +1,7 @@
 from sqlalchemy import create_engine, Column, Integer, String, TIMESTAMP, func
 from sqlalchemy.orm import declarative_base, sessionmaker, Session
 
-# ------------------------
-# 1. SQLAlchemy Configuration
-# ------------------------
+
 DATABASE_URL = "mysql+pymysql://testuser:testpass@localhost:3306/testdb"
 
 engine = create_engine(
@@ -15,14 +13,10 @@ engine = create_engine(
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# ------------------------
-# 2. ORM Base
-# ------------------------
+#rom
 Base = declarative_base()
 
-# ------------------------
-# 3. ORM Model
-# ------------------------
+
 class User(Base):
     __tablename__ = "users"
     
@@ -31,9 +25,7 @@ class User(Base):
     email = Column(String(100), nullable=False, unique=True)
     created_at = Column(TIMESTAMP, server_default=func.now())
 
-# ------------------------
-# 4. CRUD Functions
-# ------------------------
+
 def get_all_users(db: Session):
     return db.query(User).all()
 
@@ -61,9 +53,7 @@ def update_user_email(db: Session, username: str, new_email: str):
         return user
     return None
 
-# ------------------------
-# 5. Example Usage
-# ------------------------
+
 if __name__ == "__main__":
     db = SessionLocal()
 
