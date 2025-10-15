@@ -1,0 +1,7 @@
+user_id,name,age,join_date,score
+1,ones,25.0,2022-01-15,85
+2,jamel,30.0,2021-12-01,90
+3,mezen,,2023-02-20,80
+4,amel,22.0,invalid_date,NaN
+5,Eve,29.0,2023-06-10,95
+5,adam,29.0,2023-06-10,95
