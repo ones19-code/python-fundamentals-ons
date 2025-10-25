@@ -1,19 +1,17 @@
 version: '3.8'
 
 services:
-  mariadb:
-    image: mariadb:latest
-    container_name: mariadb_container
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: testdb
-      MYSQL_USER: testuser
-      MYSQL_PASSWORD: testpass
+  mongo-auth:
+    image: mongo:6.0
+    container_name: mongo-auth
     ports:
-      - "3306:3306"
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: appuser
+      MONGO_INITDB_ROOT_PASSWORD: apppass123
     volumes:
-      - db_data:/var/lib/mysql
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./mongo-init:/docker-entrypoint-initdb.d
+      - mongo-data:/data/db
 
 volumes:
-  db_data:
+  mongo-data:
