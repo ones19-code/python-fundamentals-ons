@@ -1,0 +1,98 @@
+<<<<<<< HEAD
+services:
+  app:
+    build: .
+    container_name: research-pipeline-app
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+    environment:
+      - DB_HOST=mariadb
+      - DB_USER=app_user
+      - DB_PASSWORD=app_password
+      - DB_NAME=scientific_articles
+      - MONGO_URI=mongodb://app_user:app_password@mongodb:27017/scientific_articles?authSource=scientific_articles
+      - MONGO_DB=scientific_articles
+    volumes:
+      - ./data:/app/data
+      - ./papers:/app/papers
+    networks:
+      - research-network
+    command: ["python", "main.py"]
+
+  mariadb:
+    image: mariadb:10.11
+    container_name: research-pipeline-mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: app_password
+      MYSQL_DATABASE: scientific_articles
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - research-network
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 10s
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  mongodb:
+    image: mongo:6.0
+    container_name: research-pipeline-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - research-network
+    command: mongod --auth --bind_ip_all
+    healthcheck:
+      test: |
+        mongosh --eval "
+        db = db.getSiblingDB('admin');
+        db.auth('root', 'rootpassword');
+        db.runCommand('ping');
+        " --quiet
+      start_period: 10s
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mariadb_data:
+  mongodb_data:
+
+networks:
+  research-network:
+    driver: bridge
+=======
+version: '3.8'
+
+services:
+  mongo-auth:
+    image: mongo:6.0
+    container_name: mongo-auth
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: appuser
+      MONGO_INITDB_ROOT_PASSWORD: apppass123
+    volumes:
+      - ./mongo-init:/docker-entrypoint-initdb.d
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+>>>>>>> 831940ce815bed44f390c5aae8a6d62fe00914e7

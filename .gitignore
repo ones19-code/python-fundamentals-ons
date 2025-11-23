@@ -1,1 +1,16 @@
+
 .env
+
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.env
+.DS_Store
+*.png
+*.pdf
+mongo-data/
+ b6b0907454b0980012f455304228c5dcec91b34e
