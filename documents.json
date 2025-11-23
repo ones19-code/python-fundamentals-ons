@@ -1,0 +1,12 @@
+[
+  {"id": 1, "title": "Document 1", "tags": ["AI", "ML"], "published": true, "metadata": {"author": "Alice", "pages": 10}},
+  {"id": 2, "title": "Document 2", "tags": ["Python"], "published": false},
+  {"id": 3, "title": "Document 3", "tags": [], "metadata": {"author": "Bob", "pages": 5}},
+  {"id": 4, "title": "Document 4", "published": true, "metadata": {"author": "Charlie"}},
+  {"id": 5, "title": "Document 5", "tags": ["Data"], "published": false, "metadata": {"author": "Diana", "pages": 7}},
+  {"id": 6, "title": "Document 6", "tags": ["ML"], "metadata": {"author": "Eve"}},
+  {"id": 7, "title": "Document 7", "published": true},
+  {"id": 8, "title": "Document 8", "tags": ["AI", "Python"], "published": false, "metadata": {"author": "Frank", "pages": 12}},
+  {"id": 9, "title": "Document 9"},
+  {"id": 10, "title": "Document 10", "tags": ["Data", "AI"], "published": true, "metadata": {"author": "Grace", "pages": 20}}
+]

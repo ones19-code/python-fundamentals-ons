@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 services:
   app:
     build: .
@@ -76,3 +77,22 @@ volumes:
 networks:
   research-network:
     driver: bridge
+=======
+version: '3.8'
+
+services:
+  mongo-auth:
+    image: mongo:6.0
+    container_name: mongo-auth
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: appuser
+      MONGO_INITDB_ROOT_PASSWORD: apppass123
+    volumes:
+      - ./mongo-init:/docker-entrypoint-initdb.d
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+>>>>>>> 831940ce815bed44f390c5aae8a6d62fe00914e7
