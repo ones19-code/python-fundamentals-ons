@@ -1,0 +1,4 @@
+title,summary,file_path,arxiv_id,author_full_name,author_title
+"Attention Is All You Need","The dominant sequence transduction models are based on complex recurrent or convolutional neural networks. We propose a novel network architecture, the Transformer, based solely on attention mechanisms.","papers/2301.12345.pdf","1706.03762","أحمد الخالدي","باحث علمي"
+"BERT: Pre-training of Deep Bidirectional Transformers","We introduce BERT, a new language representation model that stands for Bidirectional Encoder Representations from Transformers.","papers/2302.23456.pdf","1810.04805","فاطمة العلي","باحثة أولى"
+"Language Models are Few-Shot Learners","We demonstrate that scaling up language models greatly improves task-agnostic, few-shot performance.","papers/2303.34567.pdf","2005.14165","محمد عبدالله","مهندس أبحاث"
