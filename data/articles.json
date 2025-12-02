@@ -1,0 +1,10 @@
+[
+  {
+    "article_id": 1,
+    "title": "Pourquoi les bases de données tombent en panne ?",
+    "content": "Les bases de données peuvent tomber en panne pour plusieurs raisons. Les causes les plus courantes incluent une surcharge de requêtes, un manque de mémoire disponible, une corruption des fichiers internes ou une mauvaise configuration du serveur. Dans certains cas, une panne peut être causée par des défaillances matérielles comme un disque dur endommagé. Les administrateurs doivent surveiller les journaux du système et configurer des sauvegardes régulières pour éviter des pertes de données. L’usage d’un système de réplication peut également réduire le risque de panne totale.",
+    "source": "article technique",
+    "url": "https://example.com/bdd-pannes",
+    "created_at": "2024-09-10"
+  }
+]

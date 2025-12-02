@@ -1,0 +1,9 @@
+pandas
+qdrant-client
+pydantic
+sentence-transformers
+sqlalchemy
+pymongo
+python-dotenv
+notebook
+
